@@ -454,10 +454,10 @@ body {
 
 .download-options {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
-    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .download-option {
@@ -470,6 +470,9 @@ body {
     width: 100%;
     text-align: center;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .download-option:hover {
@@ -709,7 +712,9 @@ body {
     }
     
     .download-options {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 1.5rem;
     }
     
