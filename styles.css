@@ -427,16 +427,16 @@ body {
 
 .app-version {
     background: var(--accent-bg);
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 12px;
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--accent-text);
     border: 1px solid var(--accent-border);
     text-align: center;
     word-wrap: break-word;
     max-width: 100%;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 .download-counter {
