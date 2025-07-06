@@ -260,6 +260,28 @@ body {
     color: white;
 }
 
+.btn-github {
+    background: linear-gradient(135deg, #24292e 0%, #2f363d 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--button-shadow);
+}
+
+.btn-github:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--button-hover-shadow);
+    color: white;
+    background: linear-gradient(135deg, #2f363d 0%, #24292e 100%);
+}
+
 /* Phone mockup */
 .phone-mockup {
     position: relative;
@@ -430,9 +452,11 @@ body {
 }
 
 .download-options {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     margin-bottom: 2rem;
+    justify-content: center;
 }
 
 .download-option {
