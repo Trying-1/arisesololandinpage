@@ -452,11 +452,9 @@ body {
 }
 
 .download-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+    display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .download-option {
