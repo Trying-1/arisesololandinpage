@@ -12,7 +12,7 @@ A modern fitness workout tracking app inspired by Solo Leveling manhwa, featurin
 
 ## 🚀 Live Website
 
-Visit the live website: [https://trying-1.github.io/arisesololandinpage/](https://trying-1.github.io/arisesololandinpage/)
+Visit the live website: [https://arisesolo.com](https://arisesolo.com)
 
 ## 📱 Download
 
@@ -148,12 +148,12 @@ This project uses GitHub Pages for hosting:
 ## 📞 Contact
 
 - **Email**: support@arisesolo.com
-- **Website**: [https://trying-1.github.io/arisesololandinpage/](https://trying-1.github.io/arisesololandinpage/)
+- **Website**: [https://arisesolo.com](https://arisesolo.com)
 
 ## 📄 Legal
 
-- [Terms of Service](https://trying-1.github.io/arisesololandinpage/terms.html)
-- [Privacy Policy](https://trying-1.github.io/arisesololandinpage/privacy.html)
+- [Terms of Service](https://arisesolo.com/terms.html)
+- [Privacy Policy](https://arisesolo.com/privacy.html)
 
 ## 📚 Documentation
 
