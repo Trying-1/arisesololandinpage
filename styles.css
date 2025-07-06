@@ -455,7 +455,9 @@ body {
 .download-options {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
 .download-option {
@@ -465,7 +467,9 @@ body {
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     max-width: 400px;
+    width: 100%;
     text-align: center;
+    margin: 0 auto;
 }
 
 .download-option:hover {
