@@ -1,3 +1,45 @@
+// Download tracking function
+function trackDownload() {
+    // Google Analytics tracking
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'download', {
+            'event_category': 'engagement',
+            'event_label': 'arise-solo-apk',
+            'value': 1
+        });
+    }
+    
+    // Local storage tracking (backup)
+    const downloads = localStorage.getItem('downloads') || 0;
+    const newCount = parseInt(downloads) + 1;
+    localStorage.setItem('downloads', newCount);
+    
+    // Update display
+    updateDownloadCounter(newCount);
+    
+    // Console log for debugging
+    console.log('Download tracked! Total downloads:', newCount);
+    
+    // Show success notification
+    setTimeout(() => {
+        showNotification('Download started! Check your downloads folder.');
+    }, 500);
+}
+
+// Update download counter display
+function updateDownloadCounter(count) {
+    const counterElement = document.getElementById('downloadCount');
+    if (counterElement) {
+        counterElement.textContent = count;
+    }
+}
+
+// Initialize download counter on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const downloads = localStorage.getItem('downloads') || 0;
+    updateDownloadCounter(parseInt(downloads));
+});
+
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
     // Get all navigation links

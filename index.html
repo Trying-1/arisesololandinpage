@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
     <header class="header">
@@ -89,13 +98,16 @@
                         <div class="app-version">
                             <strong>Version 1.0.0</strong> • File size: ~33 MB • Requires Android 6.0+
                         </div>
+                        <div class="download-counter">
+                            <span id="downloadCount">0</span> downloads
+                        </div>
                     </div>
                     
                     <div class="download-options">
                         <div class="download-option">
                             <h4>Google Drive</h4>
                             <p>Download from Google Drive</p>
-                            <a href="https://drive.google.com/file/d/11rpamtjqhYVXeKmJL-A-fLSFMI8x7Wgs/view?usp=sharing" class="btn btn-drive" target="_blank">
+                            <a href="https://drive.google.com/file/d/11rpamtjqhYVXeKmJL-A-fLSFMI8x7Wgs/view?usp=sharing" class="btn btn-drive" target="_blank" onclick="trackDownload()">
                                 <i class="fab fa-google-drive"></i>
                                 Download from Drive
                             </a>

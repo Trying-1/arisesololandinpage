@@ -412,6 +412,23 @@ body {
     border: 1px solid var(--accent-border);
 }
 
+.download-counter {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.download-counter span {
+    font-weight: 700;
+    color: #ffffff;
+}
+
 .download-options {
     display: flex;
     justify-content: center;

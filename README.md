@@ -27,6 +27,27 @@ Download the APK file using Google Drive:
 - ✅ **Google Drive** - Fast, reliable downloads with no file size limits
 - ✅ **GitHub Pages** - Static website hosting
 
+## 📊 Download Tracking
+
+The website includes download tracking functionality:
+
+### **Google Analytics Setup:**
+1. Create a Google Analytics account at [analytics.google.com](https://analytics.google.com)
+2. Create a new property for your website
+3. Get your Measurement ID (starts with "G-")
+4. Replace `GA_MEASUREMENT_ID` in `index.html` with your actual Measurement ID
+
+### **Tracking Features:**
+- ✅ **Download button clicks** - Tracked via Google Analytics
+- ✅ **Local download counter** - Shows total downloads on the page
+- ✅ **Success notifications** - User feedback when download starts
+- ✅ **Console logging** - For debugging and development
+
+### **View Analytics:**
+- **Google Analytics**: Real-time and historical download data
+- **Local Counter**: Visible on the download page
+- **Browser Console**: Check console for download tracking logs
+
 ## 🛠️ Development
 
 ### Prerequisites
