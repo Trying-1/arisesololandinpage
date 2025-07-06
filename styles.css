@@ -407,6 +407,7 @@ body {
     border: 1px solid var(--border-color);
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .download-info {
@@ -487,7 +488,7 @@ body {
 /* Installation Steps */
 .installation-steps {
     margin-top: 2rem;
-    text-align: left;
+    text-align: center;
     background: var(--steps-bg);
     padding: 2rem;
     border-radius: 16px;
