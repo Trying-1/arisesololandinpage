@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found | ARISE SOLO</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .error-container {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        }
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 0.5rem;
+        }
+        .error-icon {
+            font-size: 3rem;
+            color: #f59e42;
+            margin-bottom: 1rem;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .home-link {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: #10b981;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(16,185,129,0.15);
+            transition: background 0.2s;
+        }
+        .home-link:hover {
+            background: #059669;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+        }
+        @media (max-width: 600px) {
+            .error-code { font-size: 3.5rem; }
+            .error-message { font-size: 1.1rem; }
+            .error-container { padding: 1.5rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="app_icon.png" alt="ARISE SOLO Logo" class="logo-icon">
+        <span style="font-size:1.5rem;font-weight:700;letter-spacing:1px;">ARISE SOLO</span>
+    </div>
+    <div class="error-container">
+        <div class="error-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="error-code">404</div>
+        <div class="error-message">Oops! The page you’re looking for doesn’t exist.<br>Level up your navigation and try again!</div>
+        <a href="index.html" class="home-link"><i class="fas fa-home"></i> Go Home</a>
+    </div>
+</body>
+</html> 
