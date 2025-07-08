@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://arisesolo.com/sitemap.xml 
