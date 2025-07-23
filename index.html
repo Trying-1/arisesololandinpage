@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solo Leveling Workout App | Jinwoo Workout System | ARISE SOLO</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -76,13 +76,15 @@
                             Experience the real <strong>Solo Leveling system</strong> and <strong>Jinwoo workout system</strong> in your daily fitness routine!
                         </p>
                         <div class="hero-buttons">
-                            <a href="https://github.com/Arise-Solo/Arise-Solo-App/releases/download/v1.0.1/arisesolo.apk" class="btn btn-primary" target="_blank" onclick="trackDownload()">
-                                <i class="fas fa-download"></i>
-                                Download App
+                            <a href="https://github.com/Arise-Solo/Arise-Solo-App/releases/download/v1.0.1/arisesolo.apk" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-google-play"></i> Download APK
                             </a>
-                            <a href="#features" class="btn btn-secondary">
-                                <i class="fas fa-info-circle"></i>
-                                Learn More
+                            <a href="APP_STORE_URL" class="btn btn-secondary disabled" target="_blank" aria-label="Not available yet" tabindex="-1" style="pointer-events: none; opacity: 0.6;">
+                                <i class="fab fa-apple"></i> Download on App Store
+                            </a>
+                            <div class="appstore-note">Support to purchase a Mac for building the iOS version of this app.</div>
+                            <a href="https://ko-fi.com/ariseolo" class="btn btn-secondary" target="_blank">
+                                <i class="fas fa-coffee"></i> Support me on Ko-fi
                             </a>
                         </div>
                     </div>
@@ -138,40 +140,54 @@
             <section id="download" class="download">
                 <h2>Download Now</h2>
                 <p>
-                    Begin your solo leveling journey! Download your app below.
+                    Begin your solo leveling journey! Download your app below.<br>
+                    <strong>Now available on Google Play:</strong>
+                    <a href="https://play.google.com/store/apps/details?id=arisesolo.com&pli=1" target="_blank">ARISE SOLO - LEVEL UP SOLO</a>
                 </p>
                 
                 <div class="download-card">
                     <div class="download-info">
                         <h3>ARISE SOLO - LEVEL UP SOLO</h3>
-                        <p>Transform your fitness journey with our Solo Leveling inspired workout tracking app.</p>
+                        <p>Unleash your inner shadows and transform your life journey with ARISE SOLO, the ultimate RPG-inspired fitness app!<br>
+                        <ul style="text-align:left; max-width: 500px; margin: 1rem auto;">
+                            <li>RPG Progression: Level up your character by completing real-life workouts and quests.</li>
+                            <li>Daily & Weekly Quests: Stay motivated with a variety of quests and challenges tailored to your fitness level.</li>
+                            <li>Streak System: Build healthy habits by maintaining your activity streak.</li>
+                            <li>Analytics & Progress Tracking: Visualize your journey with detailed analytics, charts, and summaries.</li>
+                            <li>Customizable Workouts: Choose from preset routines or create your own.</li>
+                            <li>Minimal Permissions & Privacy: Only requires internet access; no sensitive permissions.</li>
+                            <li>Firebase Cloud Sync: Secure cloud backup for progress across devices.</li>
+                            <li>Modern, Intuitive Design: Sleek, user-friendly interface inspired by RPGs.</li>
+                        </ul>
+                        <a href="https://play.google.com/store/apps/details?id=arisesolo.com&pli=1" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-google-play"></i> Download on Play Store
+                        </a>
+                        </p>
                         <div class="app-version">
                             <strong>Version 1.0.0</strong><br>
                             File size: 37.1 MB<br>
-                            Requires Android 6.0+
+                            Requires Android 6.0+<br>
+                            <a href="https://play.google.com/store/apps/details?id=arisesolo.com&pli=1" target="_blank">View on Google Play</a>
                         </div>
                     </div>
                     
                     <div class="download-options">
                         <div class="download-option">
                             <h4>Download ARISE SOLO</h4>
-                            <p>Get the latest version of ARISE SOLO for Android</p>
-                            <a href="https://github.com/Arise-Solo/Arise-Solo-App/releases/download/v1.0.1/arisesolo.apk" class="btn btn-primary" target="_blank" onclick="trackDownload()" id="github-download">
-                                <i class="fas fa-download"></i>
-                                Download App
+                            <p>Get the latest version of ARISE SOLO for your device</p>
+                            <a href="https://github.com/Arise-Solo/Arise-Solo-App/releases/download/v1.0.1/arisesolo.apk" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-google-play"></i> Download APK
+                            </a>
+                            <a href="APP_STORE_URL" class="btn btn-secondary disabled" target="_blank" aria-label="Not available yet" tabindex="-1" style="pointer-events: none; opacity: 0.6;">
+                                <i class="fab fa-apple"></i> Download on App Store
+                            </a>
+                            <div class="appstore-note">Support to purchase a Mac for building the iOS version of this app.</div>
+                            <a href="https://ko-fi.com/arisesolo" class="btn btn-secondary" target="_blank">
+                                <i class="fas fa-coffee"></i> Support me on Ko-fi
                             </a>
                         </div>
                     </div>
 
-                    <div class="installation-steps">
-                        <h4>Installation Instructions</h4>
-                        <ol>
-                            <li>Enable "Install from Unknown Sources" in your Android settings (Settings > Security > Unknown Sources)</li>
-                            <li>Click the download button above to get the app file</li>
-                            <li>Open the downloaded app file and follow the installation prompts</li>
-                            <li>Start your solo leveling journey!</li>
-                        </ol>
-                    </div>
                 </div>
             </section>
         </main>
@@ -262,6 +278,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html> 

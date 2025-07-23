@@ -166,9 +166,11 @@ body {
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
-    justify-content: flex-start;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
 /* Buttons */
@@ -497,6 +499,12 @@ body {
     font-size: 0.95rem;
 }
 
+.download-option > a {
+    margin: 0.5rem 0;
+    min-width: 220px;
+    justify-content: center;
+}
+
 /* Installation Steps */
 .installation-steps {
     margin-top: 2rem;
@@ -694,7 +702,9 @@ body {
     }
     
     .hero-buttons {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
     
     .features-grid {
@@ -732,6 +742,10 @@ body {
         padding: 0.5rem 1rem;
         line-height: 1.4;
         word-break: break-word;
+    }
+    .download-option > a {
+        width: 100%;
+        min-width: unset;
     }
 }
 
@@ -829,4 +843,11 @@ html {
     --button-hover-shadow: 
         0 6px 16px rgba(0, 0, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
+} 
+
+.appstore-note {
+    font-size: 0.92rem;
+    color: #718096;
+    text-align: center;
+    margin: 0.5rem 0 1rem 0;
 } 
