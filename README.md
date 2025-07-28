@@ -1,3 +1,3 @@
-Download ARISE SOLO APK from GitHub Releases:
+Download ARISE SOLO from the Google Play Store:
 
-[Download ARISE SOLO APK](https://github.com/Arise-Solo/Arise-Solo-App/releases/download/v1.0.1/arisesolo.apk) 
+[Download ARISE SOLO on Google Play](https://play.google.com/store/apps/details?id=arisesolo.com) 
