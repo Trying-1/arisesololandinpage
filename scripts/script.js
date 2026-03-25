@@ -1,419 +1,238 @@
-// Download tracking function
-function trackDownload() {
-    // Google Analytics tracking
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'download', {
-            'event_category': 'engagement',
-            'event_label': 'arise-solo-apk',
-            'value': 1
-        });
-    }
-    
-    // Local storage tracking (backup)
-    const downloads = localStorage.getItem('downloads') || 0;
-    const newCount = parseInt(downloads) + 1;
-    localStorage.setItem('downloads', newCount);
-    
-    // Update display
-    updateDownloadCounter(newCount);
-    
-    // Console log for debugging
-    console.log('Download tracked! Total downloads:', newCount);
-    
-    // Show success notification
-    setTimeout(() => {
-        showNotification('Download started! Check your downloads folder.');
-    }, 500);
-}
+/**
+ * ARISE SOLO - Mobile First System Design
+ */
 
-// Update download counter display
-function updateDownloadCounter(count) {
-    const counterElement = document.getElementById('downloadCount');
-    if (counterElement) {
-        counterElement.textContent = count;
-    }
-}
-
-// Initialize download counter on page load
-document.addEventListener('DOMContentLoaded', function() {
-    const downloads = localStorage.getItem('downloads') || 0;
-    updateDownloadCounter(parseInt(downloads));
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+    initScrollReveal();
+    initSmoothScroll();
+    initBtnEffects();
+    initScreenshotSlider();
+    initFloatingButton();
 });
 
-// Smooth scrolling for navigation links
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    // Add click event listeners for smooth scrolling
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // Update active navigation link
-                navLinks.forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-            }
-        });
-    });
-    
-    // Update active navigation link on scroll
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section[id]');
-        const scrollPos = window.scrollY + 100;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + sectionId) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    });
-    
-    // Add download tracking
-    const downloadBtn = document.querySelector('.btn-download');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function() {
-            // You can add analytics tracking here
-            console.log('APK download initiated');
-            
-            // Optional: Show a success message
-            setTimeout(() => {
-                showNotification('Download started! Check your downloads folder.');
-            }, 1000);
-        });
-    }
-    
-    // Add hover effects for feature cards
-    const featureCards = document.querySelectorAll('.feature-card');
-    featureCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-    
-    // Add loading animation for buttons
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (this.classList.contains('btn-download')) {
-                // Add loading state
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
-                this.style.pointerEvents = 'none';
-                
-                // Reset after a delay (simulating download)
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                    this.style.pointerEvents = 'auto';
-                }, 2000);
-            }
-        });
-    });
-});
-
-// Notification function
-function showNotification(message) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas fa-check-circle"></i>
-            <span>${message}</span>
-        </div>
-    `;
-    
-    // Add styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #10b981;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        font-weight: 500;
-    `;
-    
-    // Add to page
-    document.body.appendChild(notification);
-    
-    // Show notification
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
-    
-    // Remove notification after 3 seconds
-    setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
-    }, 3000);
-}
-
-// Add parallax effect to hero section
-window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    const phoneMockup = document.querySelector('.phone-mockup');
-    
-    if (hero && phoneMockup) {
-        const rate = scrolled * -0.5;
-        phoneMockup.style.transform = `translateY(${rate}px)`;
-    }
-});
-
-// Add intersection observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.feature-card, .download-card, .installation-steps');
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-});
-
-// Mobile menu functionality and responsive features
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
-    const header = document.querySelector('.header');
+/**
+ * Mobile Menu Toggle
+ */
+function initMobileMenu() {
+    const menuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
+    const body = document.body;
     
-    // Create mobile menu button if it doesn't exist
-    let mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    if (!mobileMenuBtn) {
-        mobileMenuBtn = document.createElement('button');
-        mobileMenuBtn.className = 'mobile-menu-btn';
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        header.appendChild(mobileMenuBtn);
-    }
-    
-    // Mobile menu toggle
-    mobileMenuBtn.addEventListener('click', function() {
-        nav.classList.toggle('active');
-        const isOpen = nav.classList.contains('active');
-        this.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    });
-    
-    // Close mobile menu when clicking on a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 767) {
+    if (menuBtn && nav) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nav.classList.toggle('active');
+            menuBtn.innerHTML = nav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+            body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close on link click
+        nav.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
                 nav.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!header.contains(e.target) && nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
-    
-    // Add click event listeners for navigation
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const href = this.getAttribute('href');
-            
-            // Check if the link points to the current page or another page
-            if (href.includes('#')) {
-                // Link with anchor - check if it's on the same page
-                const [page, section] = href.split('#');
-                
-                if (page === '' || page === window.location.pathname.split('/').pop()) {
-                    // Same page - smooth scroll to section
-                    const targetSection = document.querySelector('#' + section);
-                    if (targetSection) {
-                        // Close mobile menu first
-                        if (window.innerWidth <= 767) {
-                            nav.classList.remove('active');
-                            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                        }
-                        
-                        // Smooth scroll to target
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                        
-                        // Update active navigation link
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        this.classList.add('active');
-                    }
-                } else {
-                    // Different page - navigate to the page and section
-                    window.location.href = href;
-                }
-            } else {
-                // Simple page navigation
-                window.location.href = href;
-            }
-        });
-    });
-    
-    // Update active navigation link on scroll (only on pages with sections)
-    const sections = document.querySelectorAll('section[id]');
-    if (sections.length > 0) {
-        window.addEventListener('scroll', function() {
-            const scrollPos = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        const linkHref = link.getAttribute('href');
-                        if (linkHref && linkHref.includes('#' + sectionId)) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                body.style.overflow = '';
             });
         });
     }
-    
-    // Set active navigation based on current page
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === 'index.html' && href === 'index.html')) {
-            link.classList.add('active');
-        }
-    });
-    
-    // Add download tracking
-    const downloadBtn = document.querySelector('.btn-download');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function() {
-            // You can add analytics tracking here
-            console.log('APK download initiated');
-            
-            // Optional: Show a success message
-            setTimeout(() => {
-                showNotification('Download started! Check your downloads folder.');
-            }, 1000);
-        });
-    }
-    
-    // Add hover effects for feature cards (desktop only)
-    const featureCards = document.querySelectorAll('.feature-card');
-    featureCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            if (window.innerWidth > 767) {
-                this.style.transform = 'translateY(-10px)';
-            }
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            if (window.innerWidth > 767) {
-                this.style.transform = 'translateY(0)';
-            }
-        });
-    });
-    
-    // Add loading animation for buttons
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (this.classList.contains('btn-download')) {
-                // Add loading state
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
-                this.style.pointerEvents = 'none';
-                
-                // Reset after a delay (simulating download)
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                    this.style.pointerEvents = 'auto';
-                }, 2000);
-            }
-        });
-    });
-    
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 767) {
-            nav.classList.remove('active');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
-});
+}
 
-// Touch-friendly improvements
-document.addEventListener('DOMContentLoaded', function() {
-    // Add touch feedback for buttons
-    const touchElements = document.querySelectorAll('.btn, .social-links a');
-    
-    touchElements.forEach(element => {
-        element.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.95)';
+/**
+ * Intersection Observer for scroll animations
+ */
+function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // observer.unobserve(entry.target); // Optional: if you want it to trigger once
+            }
         });
-        
-        element.addEventListener('touchend', function() {
-            this.style.transform = '';
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Also include feature cards in the reveal
+    document.querySelectorAll('.feature-card').forEach(card => {
+        card.classList.add('reveal');
+        observer.observe(card);
+    });
+}
+
+/**
+ * Smooth Scroll to sections
+ */
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const offset = 80;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = target.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
+
+    // Handle initial hash if present
+    if (window.location.hash) {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
+    }
+}
+
+/**
+ * System UI Effects
+ */
+function initBtnEffects() {
+    document.querySelectorAll('.btn, .floating-install').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const isExternal = btn.getAttribute('target') === '_blank';
+            const btnName = btn.innerText || btn.getAttribute('aria-label') || 'Install Button';
+            
+            // GA4 Event tracking
+            if (typeof gtag === 'function') {
+                gtag('event', 'app_download_click', {
+                    'button_name': btnName,
+                    'is_external': isExternal
+                });
+            }
+
+            showSystemNotification('System Signal: ' + (isExternal ? 'Redirecting' : 'Processing'));
+        });
+    });
+}
+
+function showSystemNotification(text) {
+    const existing = document.querySelector('.system-toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'system-toast';
+    toast.innerHTML = `<i class="fas fa-bolt"></i> ${text}`;
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: rgba(15, 23, 42, 0.95);
+        color: #3b82f6;
+        padding: 12px 24px;
+        border: 1px solid #3b82f6;
+        border-radius: 8px;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        z-index: 9999;
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        transform: translate3d(0, 100px, 0);
+        transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    `;
     
-    // Prevent zoom on double tap for iOS
-    let lastTouchEnd = 0;
-    document.addEventListener('touchend', function(event) {
-        const now = (new Date()).getTime();
-        if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
+    document.body.appendChild(toast);
+    setTimeout(() => toast.style.transform = 'translate3d(0, 0, 0)', 50);
+    setTimeout(() => {
+        toast.style.transform = 'translate3d(0, 150px, 0)';
+        setTimeout(() => toast.remove(), 400);
+    }, 4000);
+}
+
+/**
+ * Screenshot Slider - Auto-slide and Dots
+ */
+function initScreenshotSlider() {
+    const slider = document.querySelector('.screenshot-slider');
+    const dots = document.querySelectorAll('.dot');
+    if (!slider || dots.length === 0) return;
+
+    let currentIndex = 0;
+    const totalSlides = dots.length;
+    let autoSlideInterval;
+
+    const startAutoSlide = () => {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            const scrollWidth = slider.offsetWidth;
+            slider.scrollTo({
+                left: scrollWidth * currentIndex,
+                behavior: 'smooth'
+            });
+        }, 3500);
+    };
+
+    const updateDots = (index) => {
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    };
+
+    // Update dots and index on scroll
+    let isScrolling;
+    slider.addEventListener('scroll', () => {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+            const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+            if (index !== currentIndex) {
+                currentIndex = index;
+                updateDots(currentIndex);
+
+                // GA4 Event tracking for slider engagement
+                if (typeof gtag === 'function') {
+                    gtag('event', 'screenshot_swipe', {
+                        'screen_index': currentIndex,
+                        'screen_name': document.querySelectorAll('.screenshot-slider img')[currentIndex].alt
+                    });
+                }
+            }
+        }, 50);
+    });
+
+    // Interaction handling
+    slider.addEventListener('touchstart', () => {
+        clearInterval(autoSlideInterval);
+    }, {passive: true});
+
+    slider.addEventListener('touchend', () => {
+        startAutoSlide();
+    }, {passive: true});
+
+    // Start initial
+    startAutoSlide();
+}
+
+/**
+ * Floating Install Button Visibility
+ */
+function initFloatingButton() {
+    const fab = document.querySelector('.floating-install');
+    if (!fab) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            fab.classList.add('visible');
+        } else {
+            fab.classList.remove('visible');
         }
-        lastTouchEnd = now;
-    }, false);
-}); 
+    }, {passive: true});
+}
