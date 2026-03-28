@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBtnEffects();
     initScreenshotSlider();
     initFloatingButton();
+    cleanTrackingUrl();
 });
 
 /**
@@ -235,4 +236,16 @@ function initFloatingButton() {
             fab.classList.remove('visible');
         }
     }, {passive: true});
+}
+
+/**
+ * Clean URL (Hide UTM tags after GA4 grabs them)
+ */
+function cleanTrackingUrl() {
+    if (window.history.replaceState && window.location.search.includes('utm_')) {
+        setTimeout(() => {
+            const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({path: cleanUrl}, '', cleanUrl);
+        }, 1000); // Wait 1 second to ensure GA4 has grabbed the data
+    }
 }
