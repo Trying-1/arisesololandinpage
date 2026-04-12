@@ -303,5 +303,5 @@ videoheroes.tv, 212499, RESELLER, 064bc410192443d8
 
 # Added 2026-04-08 for Meta and IronSource Mediation
 facebook.com, 779989001713920, DIRECT
-# IronSource Account ID: 246985f45
-ironsource.com, 246985f45, DIRECT
+ironsrc.com, 638225, DIRECT, 510486638c4566c9
+ssac.com, 638225, DIRECT, 510486638c4566c9
