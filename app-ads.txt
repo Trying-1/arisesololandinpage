@@ -1,3 +1,4 @@
+OWNERDOMAIN=arisesolo.com
 google.com, pub-5829296907403264, DIRECT, f08c47fec0942fa0 
 conversantmedia.com, 100863, RESELLER, 03113cd04947736d
 conversantmedia.com, 100396, RESELLER, 03113cd04947736d
@@ -305,3 +306,25 @@ videoheroes.tv, 212499, RESELLER, 064bc410192443d8
 facebook.com, 779989001713920, DIRECT, c2ce71185035a735
 ironsrc.com, 638225, DIRECT, 510486638c4566c9
 ssac.com, 638225, DIRECT, 510486638c4566c9
+
+
+blueseasx.com, 203625, RESELLER
+rubiconproject.com, 26132, RESELLER, 0bfd66d529a55807
+pubnative.net, 1009966, RESELLER, d641df8625486a7b
+video.unrulymedia.com, 389957698, RESELLER
+triplelift.com, 14594, RESELLER, 6c33edb13117fd86
+ushareit.com, lc7dc692567a127a57, RESELLER
+video.unrulymedia.com, 657436911, RESELLER
+lijit.com, 528770, RESELLER, fafdf38b16bf6b2b
+risecodes.com, 68d54e2fe125150001dd91e2, RESELLER
+toponad.com, 167c6b2c1d02bd, RESELLER, 1d49fe424a1a456d
+media.net, 8cu5l226o, RESELLER
+bidmachine.io, 896, RESELLER
+pokkt.com, 5536, RESELLER, c45702d9311e25fd
+appads.in, 105536, RESELLER
+criteo.com, b-062019, RESELLER, 9fac4a4a87c2a44f
+improvedigital.com, 1114, RESELLER
+improvedigital.com, 2181, RESELLER
+xad.com, 958, RESELLER, 81cbf0a75a5e0e9a
+admanmedia.com, 2242, RESELLER
+ignitemediatech.com, pub_11115, RESELLER
