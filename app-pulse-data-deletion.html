@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Data Deletion - AppPulse Screen Time Tracker</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --teal: #14b8a6;
+      --teal-light: #2dd4bf;
+      --orange: #f97316;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(20, 184, 166, 0.15);
+      color: var(--teal-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      border: 1px solid rgba(20, 184, 166, 0.3);
+    }
+    h1 {
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    h2 {
+      font-size: 20px;
+      color: var(--teal-light);
+      margin-top: 32px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    p, li {
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .step-box {
+      background: #1c2128;
+      border: 1px solid var(--border);
+      padding: 20px 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: var(--teal);
+      color: #000000;
+      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .step-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .highlight-card {
+      background: rgba(20, 184, 166, 0.08);
+      border-left: 4px solid var(--teal);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 20px 0;
+    }
+    .highlight-card p {
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+    .nav-links {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 14px;
+    }
+    a {
+      color: var(--teal-light);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact-box {
+      background: #1c2128;
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <span class="badge">Google Play Data Safety</span>
+      <h1>User Data Deletion Policy & Instructions</h1>
+      <p class="subtitle">Application: <strong>AppPulse: Screen Time Tracker</strong> (<code>com.appdata</code>) | Last Updated: October 15, 2026</p>
+    </div>
+
+    <div class="highlight-card">
+      <p>💡 <strong>Key Takeaway:</strong> AppPulse operates 100% on your device and does NOT maintain external servers, user accounts, or cloud databases. You can instantly and permanently erase all stored statistics directly from your device at any time.</p>
+    </div>
+
+    <h2>1. Overview of Data Storage</h2>
+    <p>AppPulse processes your Android system screen time and app open counts strictly within your local device sandbox. We do not require accounts, logins, or email registrations. Therefore, we do not hold any remote copies of your personal data or device usage records on external servers.</p>
+
+    <h2>2. How to Erase Your Data</h2>
+    <p>You have full, immediate control over all data stored on your phone. Choose any of the following methods to permanently delete your data:</p>
+
+    <div class="step-box">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">Option 1: Clear Data Directly Within AppPulse</div>
+      </div>
+      <p>You can purge all historical usage statistics with a single tap inside the application:</p>
+      <ol style="margin-left: 24px; margin-bottom: 8px;">
+        <li>Open the <strong>AppPulse</strong> app on your device.</li>
+        <li>Tap the <strong>Settings</strong> tab in the bottom navigation bar.</li>
+        <li>Scroll down to the <strong>Storage & Data Management</strong> section.</li>
+        <li>Tap <strong>Clear Cached Stats</strong> and confirm when prompted.</li>
+      </ol>
+      <p style="color: var(--muted); font-size: 13px; margin-top: 8px;">&bull; This instantly purges all local SQLite tracking logs and recalculates stats afresh.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">Option 2: Clear Storage via Android System Settings</div>
+      </div>
+      <p>You can also wipe all application databases, caches, and stored preferences using the Android OS:</p>
+      <ol style="margin-left: 24px; margin-bottom: 8px;">
+        <li>Open your phone's <strong>Settings</strong>.</li>
+        <li>Navigate to <strong>Apps</strong> (or <strong>Apps & Notifications &rarr; See all apps</strong>).</li>
+        <li>Select <strong>AppPulse</strong>.</li>
+        <li>Tap <strong>Storage & cache</strong>.</li>
+        <li>Tap <strong>Clear Storage</strong> (or <strong>Clear Data</strong>).</li>
+      </ol>
+      <p style="color: var(--muted); font-size: 13px; margin-top: 8px;">&bull; This resets the application to its original fresh-install state.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">Option 3: Uninstall the Application</div>
+      </div>
+      <p>Uninstalling AppPulse from your Android device causes the Android operating system to permanently delete the application's entire private directory, including all local databases, cached data, and configuration files.</p>
+    </div>
+
+    <h2>3. Cloud Server Retention</h2>
+    <p>Because AppPulse does not operate user accounts or cloud databases, there is no remote server data to delete. When you clear data or uninstall the app locally, your data is completely and irretrievably erased.</p>
+
+    <h2>4. Questions or Support</h2>
+    <div class="contact-box">
+      <p>If you have any questions regarding data deletion or privacy practices, feel free to contact us:</p>
+      <p><strong>Email:</strong> <a href="mailto:support@apppulse.dev">support@apppulse.dev</a></p>
+      <p><strong>Package Name:</strong> <code>com.appdata</code></p>
+    </div>
+
+    <div class="nav-links">
+      <span><a href="app-pulse-privacy-policy.html">&larr; Back to Privacy Policy</a></span>
+      <span>&copy; 2026 AppPulse. All rights reserved.</span>
+    </div>
+  </div>
+
+</body>
+</html>
