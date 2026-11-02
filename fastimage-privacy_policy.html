@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Fast Image</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0d13;
+            --card-bg: rgba(22, 26, 38, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-accent: #00f2fe;
+            --secondary-accent: #4facfe;
+            --purple-accent: #9d4edd;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 40px 20px;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(157, 78, 221, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 40%, var(--primary-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta-info {
+            color: var(--text-dim);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.06), rgba(157, 78, 221, 0.04));
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .highlight-icon {
+            background: var(--primary-accent);
+            color: #0b0d13;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .highlight-content h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .highlight-content p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: var(--primary-accent);
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 16px 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 24px;
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: '•';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            color: var(--primary-accent);
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .permission-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .permission-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .permission-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .nav-link {
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            color: var(--text-dim);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="app-badge">Official Policy</div>
+        <h1>Privacy Policy</h1>
+        <div class="meta-info">Application: <strong>Fast Image</strong> (Package ID: <code>imagevideo.com</code>) &bull; Last Updated: November 2026</div>
+    </div>
+
+    <div class="highlight-box">
+        <div class="highlight-icon">✓</div>
+        <div class="highlight-content">
+            <h3>100% Local-First Architecture</h3>
+            <p>Fast Image processes all images, video frames, animations, and audio soundtracks directly on your device hardware. Your creative media never leaves your phone and is never uploaded to any remote server.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>1. Introduction</h2>
+        <p>This Privacy Policy explains how <strong>Fast Image</strong> ("we", "our", or "us") handles information when you use our mobile application. We are committed to safeguarding the privacy of our creators and users. By using Fast Image, you consent to the practices described in this document.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Data Collection & Processing</h2>
+        <p>Fast Image is designed from the ground up as an on-device utility application:</p>
+        <ul>
+            <li><strong>No Account Required:</strong> You do not need to create an account, log in, or provide any personal details (name, email address, phone number) to use the app.</li>
+            <li><strong>No Cloud Storage of Media:</strong> Photos, images, and audio imported into Fast Image are processed locally via native hardware decoders and graphics shaders. We operate zero external storage servers for your media.</li>
+            <li><strong>No Tracking of Content:</strong> We do not monitor, inspect, scan, or analyze the creative content you compile or export.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Device Permissions & Usage</h2>
+        <p>To provide video creation and image sequencing features, the app requests specific Android permissions strictly upon user action:</p>
+        
+        <div class="permission-card">
+            <div class="permission-title">📷 Photos, Videos & Storage (READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_EXTERNAL_STORAGE)</div>
+            <p class="permission-desc">Required to let you browse and select images and background videos from your device gallery to build video sequences, and to save rendered output videos to your device.</p>
+        </div>
+
+        <div class="permission-card">
+            <div class="permission-title">🎵 Music & Audio (READ_MEDIA_AUDIO, READ_EXTERNAL_STORAGE)</div>
+            <p class="permission-desc">Required to let you select audio tracks or sound effects from your local device storage to sync with your video sequences.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Third-Party Services & Advertising</h2>
+        <p>Fast Image may integrate third-party mobile advertising and analytics frameworks to support ongoing development:</p>
+        <ul>
+            <li><strong>Google AdMob:</strong> We use Google Mobile Ads SDK to serve advertisements. Google may use advertising IDs (GAID) and anonymous device information to display personalized or contextual ads in accordance with <a href="https://policies.google.com/privacy" target="_blank" style="color: var(--primary-accent);">Google's Privacy Policy</a>.</li>
+            <li><strong>User Ad Controls:</strong> You can opt out of personalized advertising or reset your Advertising ID anytime via your Android device settings: <em>Settings &gt; Google &gt; Ads &gt; Delete Advertising ID</em>.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>5. Data Retention & Security</h2>
+        <p>Because all sequence project files and imported media reside strictly within the application's private sandbox storage on your local device:</p>
+        <ul>
+            <li>Your creations remain protected by Android's device-level encryption and security sandboxing.</li>
+            <li>Deleting a project in the app or clearing the app storage permanently removes all associated local files immediately.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>6. Children's Privacy</h2>
+        <p>Fast Image is a general audience creative tool and does not knowingly collect personally identifiable information from children under 13. If you believe a minor has provided information to us, please contact us immediately for assistance.</p>
+    </div>
+
+    <div class="section">
+        <h2>7. Contact & Inquiries</h2>
+        <p>For questions or assistance regarding this Privacy Policy, please contact our support team at:</p>
+        <p><strong>Email:</strong> <a href="mailto:arisesoloapp@gmail.com" style="color: var(--primary-accent);">arisesoloapp@gmail.com</a></p>
+    </div>
+
+    <div class="nav-links">
+        <a href="fastimage-privacy_policy.html" class="nav-link">Privacy Policy</a>
+        <a href="fastimage-delete_account.html" class="nav-link">Account & Data Deletion</a>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Fast Image. All rights reserved.
+    </div>
+</div>
+
+</body>
+</html>
